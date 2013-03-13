@@ -1,0 +1,840 @@
+!SESSION 2013-01-11 08:40:41.055 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_04
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2013-01-11 08:42:50.166
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-01-11 08:42:50.166
+!MESSAGE A conflict occurred for ALT+CTRL+U:
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(de.innot.avreclipse.commands.uploadproject,Upload Project,
+		Upload selected project to the target device,
+		Category(de.innot.avreclipse.commands,AVR,AVR Plugin commands,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.UpdateCommand,Update,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.team.svn.ui.action.local.UpdateAction,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.debug.core 4 2 2013-01-11 09:34:16.455
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.debug.core".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1243)
+	at org.codecover.eclipse.builder.CodeCoverDebugListener.handleTerminatedProcess(CodeCoverDebugListener.java:91)
+	at org.codecover.eclipse.builder.CodeCoverDebugListener.handleDebugEvents(CodeCoverDebugListener.java:78)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.run(DebugPlugin.java:1119)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.dispatch(DebugPlugin.java:1153)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:415)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.debug.core 4 125 2013-01-11 09:34:16.495
+!MESSAGE An exception occurred while dispatching debug events.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1243)
+	at org.codecover.eclipse.builder.CodeCoverDebugListener.handleTerminatedProcess(CodeCoverDebugListener.java:91)
+	at org.codecover.eclipse.builder.CodeCoverDebugListener.handleDebugEvents(CodeCoverDebugListener.java:78)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.run(DebugPlugin.java:1119)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.dispatch(DebugPlugin.java:1153)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:415)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.debug.core 4 2 2013-01-11 09:34:16.635
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.debug.core".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1243)
+	at org.codecover.eclipse.builder.CodeCoverDebugListener.handleTerminatedProcess(CodeCoverDebugListener.java:91)
+	at org.codecover.eclipse.builder.CodeCoverDebugListener.handleDebugEvents(CodeCoverDebugListener.java:78)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.run(DebugPlugin.java:1119)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.dispatch(DebugPlugin.java:1153)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:415)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.debug.core 4 125 2013-01-11 09:34:16.635
+!MESSAGE An exception occurred while dispatching debug events.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1243)
+	at org.codecover.eclipse.builder.CodeCoverDebugListener.handleTerminatedProcess(CodeCoverDebugListener.java:91)
+	at org.codecover.eclipse.builder.CodeCoverDebugListener.handleDebugEvents(CodeCoverDebugListener.java:78)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.run(DebugPlugin.java:1119)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.dispatch(DebugPlugin.java:1153)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:415)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jst.j2ee.core 4 0 2013-01-11 09:34:33.469
+!MESSAGE 
+!STACK 0
+java.lang.InterruptedException
+	at org.eclipse.core.internal.jobs.OrderedLock.acquire(OrderedLock.java:100)
+	at org.eclipse.jst.j2ee.internal.J2EEInit.aquireInitializePackageContentsLock(J2EEInit.java:454)
+	at org.eclipse.jst.j2ee.webservice.wsclient.internal.impl.Webservice_clientPackageImpl.initializePackageContents(Webservice_clientPackageImpl.java:457)
+	at org.eclipse.jst.j2ee.webservice.wsclient.internal.impl.Webservice_clientPackageImpl.init(Webservice_clientPackageImpl.java:141)
+	at org.eclipse.jst.j2ee.webservice.wsclient.Webservice_clientPackage.<clinit>(Webservice_clientPackage.java:75)
+	at sun.misc.Unsafe.ensureClassInitialized(Native Method)
+	at sun.reflect.UnsafeFieldAccessorFactory.newFieldAccessor(Unknown Source)
+	at sun.reflect.ReflectionFactory.newFieldAccessor(Unknown Source)
+	at java.lang.reflect.Field.acquireFieldAccessor(Unknown Source)
+	at java.lang.reflect.Field.getFieldAccessor(Unknown Source)
+	at java.lang.reflect.Field.get(Unknown Source)
+	at org.eclipse.emf.ecore.plugin.RegistryReader$EPackageDescriptor.getEPackage(RegistryReader.java:273)
+	at org.eclipse.emf.ecore.impl.EPackageRegistryImpl.getEPackage(EPackageRegistryImpl.java:127)
+	at org.eclipse.jst.j2ee.common.internal.impl.CommonPackageImpl.initializePackageContents(CommonPackageImpl.java:1332)
+	at org.eclipse.jst.j2ee.common.internal.impl.CommonPackageImpl.init(CommonPackageImpl.java:297)
+	at org.eclipse.jst.j2ee.common.CommonPackage.<clinit>(CommonPackage.java:243)
+	at org.eclipse.jst.j2ee.internal.provider.J2EEAdapterFactoryLabelProvider.<clinit>(J2EEAdapterFactoryLabelProvider.java:41)
+	at org.eclipse.jst.j2ee.navigator.internal.J2EELabelProvider.initialize(J2EELabelProvider.java:59)
+	at org.eclipse.jst.j2ee.navigator.internal.J2EELabelProvider.init(J2EELabelProvider.java:248)
+	at org.eclipse.ui.internal.navigator.extensions.NavigatorContentExtension$2.run(NavigatorContentExtension.java:176)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.navigator.extensions.NavigatorContentExtension.getLabelProvider(NavigatorContentExtension.java:169)
+	at org.eclipse.ui.internal.navigator.NavigatorContentServiceLabelProvider.findStyledText(NavigatorContentServiceLabelProvider.java:163)
+	at org.eclipse.ui.internal.navigator.NavigatorContentServiceLabelProvider.getStyledText(NavigatorContentServiceLabelProvider.java:151)
+	at org.eclipse.ui.internal.navigator.NavigatorDecoratingLabelProvider$StyledLabelProviderAdapter.getStyledText(NavigatorDecoratingLabelProvider.java:68)
+	at org.eclipse.jface.viewers.DelegatingStyledCellLabelProvider.getStyledText(DelegatingStyledCellLabelProvider.java:195)
+	at org.eclipse.jface.viewers.DecoratingStyledCellLabelProvider.getStyledText(DecoratingStyledCellLabelProvider.java:192)
+	at org.eclipse.jface.viewers.DelegatingStyledCellLabelProvider.update(DelegatingStyledCellLabelProvider.java:103)
+	at org.eclipse.jface.viewers.DecoratingStyledCellLabelProvider.update(DecoratingStyledCellLabelProvider.java:134)
+	at org.eclipse.jface.viewers.ViewerColumn.refresh(ViewerColumn.java:152)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.doUpdateItem(AbstractTreeViewer.java:938)
+	at org.eclipse.jface.viewers.AbstractTreeViewer$UpdateItemSafeRunnable.run(AbstractTreeViewer.java:106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:49)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:175)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.doUpdateItem(AbstractTreeViewer.java:1018)
+	at org.eclipse.jface.viewers.StructuredViewer$UpdateItemSafeRunnable.run(StructuredViewer.java:485)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:49)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:175)
+	at org.eclipse.jface.viewers.StructuredViewer.updateItem(StructuredViewer.java:2167)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.createTreeItem(AbstractTreeViewer.java:833)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.createAddedElements(AbstractTreeViewer.java:331)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.internalAdd(AbstractTreeViewer.java:273)
+	at org.eclipse.jface.viewers.TreeViewer.internalAdd(TreeViewer.java:662)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.add(AbstractTreeViewer.java:148)
+	at org.eclipse.ui.navigator.CommonViewer.add(CommonViewer.java:303)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.add(AbstractTreeViewer.java:652)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider$4.run(PackageExplorerContentProvider.java:969)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider.runUpdates(PackageExplorerContentProvider.java:195)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider.runPendingUpdates(PackageExplorerContentProvider.java:187)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider$1.runInUIThread(PackageExplorerContentProvider.java:165)
+	at org.eclipse.ui.progress.UIJob$1.run(UIJob.java:95)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4140)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3757)
+	at org.eclipse.ui.internal.dialogs.EventLoopProgressMonitor.runEventLoop(EventLoopProgressMonitor.java:123)
+	at org.eclipse.ui.internal.dialogs.EventLoopProgressMonitor.isCanceled(EventLoopProgressMonitor.java:97)
+	at org.eclipse.core.internal.jobs.ThreadJob.isCanceled(ThreadJob.java:146)
+	at org.eclipse.core.internal.jobs.ThreadJob.waitForRun(ThreadJob.java:235)
+	at org.eclipse.core.internal.jobs.ThreadJob.joinRun(ThreadJob.java:199)
+	at org.eclipse.core.internal.jobs.ImplicitJobs.begin(ImplicitJobs.java:92)
+	at org.eclipse.core.internal.jobs.JobManager.beginRule(JobManager.java:286)
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:118)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2282)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2339)
+	at org.eclipse.jdt.internal.ui.wizards.buildpaths.newsourcepage.DialogPackageExplorer.setSelection(DialogPackageExplorer.java:461)
+	at org.eclipse.jdt.internal.ui.wizards.buildpaths.newsourcepage.DialogPackageExplorer.setInput(DialogPackageExplorer.java:438)
+	at org.eclipse.jdt.internal.ui.wizards.buildpaths.newsourcepage.NewSourceContainerWorkbookPage.doUpdateUI(NewSourceContainerWorkbookPage.java:138)
+	at org.eclipse.jdt.internal.ui.wizards.buildpaths.newsourcepage.NewSourceContainerWorkbookPage.access$0(NewSourceContainerWorkbookPage.java:137)
+	at org.eclipse.jdt.internal.ui.wizards.buildpaths.newsourcepage.NewSourceContainerWorkbookPage$1.run(NewSourceContainerWorkbookPage.java:131)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4140)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3757)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:173)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:388)
+	at org.eclipse.jface.wizard.WizardDialog.run(WizardDialog.java:1029)
+	at org.eclipse.jdt.internal.ui.wizards.NewElementWizard.performFinish(NewElementWizard.java:134)
+	at org.eclipse.jdt.internal.ui.wizards.JavaProjectWizard.performFinish(JavaProjectWizard.java:90)
+	at org.eclipse.jface.wizard.WizardDialog.finishPressed(WizardDialog.java:827)
+	at org.eclipse.jface.wizard.WizardDialog.buttonPressed(WizardDialog.java:432)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Dialog.java:624)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:240)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4165)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3754)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at org.eclipse.ui.internal.handlers.WizardHandler$New.executeHandler(WizardHandler.java:257)
+	at org.eclipse.ui.internal.handlers.WizardHandler.execute(WizardHandler.java:277)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:293)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:476)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
+	at org.eclipse.ui.internal.handlers.SlaveHandlerService.executeCommand(SlaveHandlerService.java:241)
+	at org.eclipse.ui.internal.actions.CommandAction.runWithEvent(CommandAction.java:157)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4165)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3754)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+!SESSION 2013-02-20 07:58:38.007 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_04
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2013-02-20 07:59:14.144
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-02-20 07:59:14.144
+!MESSAGE A conflict occurred for ALT+CTRL+U:
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(de.innot.avreclipse.commands.uploadproject,Upload Project,
+		Upload selected project to the target device,
+		Category(de.innot.avreclipse.commands,AVR,AVR Plugin commands,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.UpdateCommand,Update,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.team.svn.ui.action.local.UpdateAction,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2013-02-20 08:00:30.768 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_04
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2013-02-20 08:00:37.892
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-02-20 08:00:37.892
+!MESSAGE A conflict occurred for ALT+CTRL+U:
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(de.innot.avreclipse.commands.uploadproject,Upload Project,
+		Upload selected project to the target device,
+		Category(de.innot.avreclipse.commands,AVR,AVR Plugin commands,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.UpdateCommand,Update,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.team.svn.ui.action.local.UpdateAction,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2013-02-20 08:03:04.420 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_04
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2013-02-20 08:03:11.972
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-02-20 08:03:11.972
+!MESSAGE A conflict occurred for ALT+CTRL+U:
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(de.innot.avreclipse.commands.uploadproject,Upload Project,
+		Upload selected project to the target device,
+		Category(de.innot.avreclipse.commands,AVR,AVR Plugin commands,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.UpdateCommand,Update,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.team.svn.ui.action.local.UpdateAction,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2013-02-21 07:23:56.122 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_04
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2013-02-21 07:24:54.149
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-02-21 07:24:54.149
+!MESSAGE A conflict occurred for ALT+CTRL+U:
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(de.innot.avreclipse.commands.uploadproject,Upload Project,
+		Upload selected project to the target device,
+		Category(de.innot.avreclipse.commands,AVR,AVR Plugin commands,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.UpdateCommand,Update,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.team.svn.ui.action.local.UpdateAction,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2013-02-22 08:07:44.857 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_04
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2013-02-22 08:07:57.634
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-02-22 08:07:57.634
+!MESSAGE A conflict occurred for ALT+CTRL+U:
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(de.innot.avreclipse.commands.uploadproject,Upload Project,
+		Upload selected project to the target device,
+		Category(de.innot.avreclipse.commands,AVR,AVR Plugin commands,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.UpdateCommand,Update,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.team.svn.ui.action.local.UpdateAction,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2013-02-25 07:20:55.582 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_04
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2013-02-25 07:21:22.196
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-02-25 07:21:22.196
+!MESSAGE A conflict occurred for ALT+CTRL+U:
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(de.innot.avreclipse.commands.uploadproject,Upload Project,
+		Upload selected project to the target device,
+		Category(de.innot.avreclipse.commands,AVR,AVR Plugin commands,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.UpdateCommand,Update,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.team.svn.ui.action.local.UpdateAction,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2013-02-26 07:50:15.056 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_04
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2013-02-26 07:50:45.523
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-02-26 07:50:45.523
+!MESSAGE A conflict occurred for ALT+CTRL+U:
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(de.innot.avreclipse.commands.uploadproject,Upload Project,
+		Upload selected project to the target device,
+		Category(de.innot.avreclipse.commands,AVR,AVR Plugin commands,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.UpdateCommand,Update,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.team.svn.ui.action.local.UpdateAction,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2013-02-26 09:02:39.234 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_04
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2013-02-26 09:02:46.640
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-02-26 09:02:46.641
+!MESSAGE A conflict occurred for ALT+CTRL+U:
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(de.innot.avreclipse.commands.uploadproject,Upload Project,
+		Upload selected project to the target device,
+		Category(de.innot.avreclipse.commands,AVR,AVR Plugin commands,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.UpdateCommand,Update,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.team.svn.ui.action.local.UpdateAction,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2013-02-26 09:41:08.121 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_04
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2013-02-26 09:41:15.993
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-02-26 09:41:15.993
+!MESSAGE A conflict occurred for ALT+CTRL+U:
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(de.innot.avreclipse.commands.uploadproject,Upload Project,
+		Upload selected project to the target device,
+		Category(de.innot.avreclipse.commands,AVR,AVR Plugin commands,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.UpdateCommand,Update,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.team.svn.ui.action.local.UpdateAction,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2013-02-27 13:13:26.976 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_04
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2013-02-27 13:13:50.802
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-02-27 13:13:50.802
+!MESSAGE A conflict occurred for ALT+CTRL+U:
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(de.innot.avreclipse.commands.uploadproject,Upload Project,
+		Upload selected project to the target device,
+		Category(de.innot.avreclipse.commands,AVR,AVR Plugin commands,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.UpdateCommand,Update,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.team.svn.ui.action.local.UpdateAction,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2013-02-28 07:26:02.699 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_04
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2013-02-28 07:27:20.832
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-02-28 07:27:20.832
+!MESSAGE A conflict occurred for ALT+CTRL+U:
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(de.innot.avreclipse.commands.uploadproject,Upload Project,
+		Upload selected project to the target device,
+		Category(de.innot.avreclipse.commands,AVR,AVR Plugin commands,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.UpdateCommand,Update,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.team.svn.ui.action.local.UpdateAction,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2013-03-01 07:50:31.664 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_04
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2013-03-01 07:50:58.096
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-03-01 07:50:58.096
+!MESSAGE A conflict occurred for ALT+CTRL+U:
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(de.innot.avreclipse.commands.uploadproject,Upload Project,
+		Upload selected project to the target device,
+		Category(de.innot.avreclipse.commands,AVR,AVR Plugin commands,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.UpdateCommand,Update,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.team.svn.ui.action.local.UpdateAction,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2013-03-04 07:33:48.711 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_04
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2013-03-04 07:34:23.250
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-03-04 07:34:23.250
+!MESSAGE A conflict occurred for ALT+CTRL+U:
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(de.innot.avreclipse.commands.uploadproject,Upload Project,
+		Upload selected project to the target device,
+		Category(de.innot.avreclipse.commands,AVR,AVR Plugin commands,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.UpdateCommand,Update,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.team.svn.ui.action.local.UpdateAction,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2013-03-05 07:28:45.274 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_04
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2013-03-05 07:29:05.520
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-03-05 07:29:05.520
+!MESSAGE A conflict occurred for ALT+CTRL+U:
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(de.innot.avreclipse.commands.uploadproject,Upload Project,
+		Upload selected project to the target device,
+		Category(de.innot.avreclipse.commands,AVR,AVR Plugin commands,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.UpdateCommand,Update,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.team.svn.ui.action.local.UpdateAction,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2013-03-06 07:51:18.922 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_04
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2013-03-06 07:51:31.981
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-03-06 07:51:31.981
+!MESSAGE A conflict occurred for ALT+CTRL+U:
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(de.innot.avreclipse.commands.uploadproject,Upload Project,
+		Upload selected project to the target device,
+		Category(de.innot.avreclipse.commands,AVR,AVR Plugin commands,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.UpdateCommand,Update,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.team.svn.ui.action.local.UpdateAction,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2013-03-07 07:28:43.597 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_04
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2013-03-07 07:29:15.119
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-03-07 07:29:15.119
+!MESSAGE A conflict occurred for ALT+CTRL+U:
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(de.innot.avreclipse.commands.uploadproject,Upload Project,
+		Upload selected project to the target device,
+		Category(de.innot.avreclipse.commands,AVR,AVR Plugin commands,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.UpdateCommand,Update,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.team.svn.ui.action.local.UpdateAction,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2013-03-08 07:42:58.718 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_04
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2013-03-08 07:43:24.564
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-03-08 07:43:24.564
+!MESSAGE A conflict occurred for ALT+CTRL+U:
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(de.innot.avreclipse.commands.uploadproject,Upload Project,
+		Upload selected project to the target device,
+		Category(de.innot.avreclipse.commands,AVR,AVR Plugin commands,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.UpdateCommand,Update,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.team.svn.ui.action.local.UpdateAction,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2013-03-12 08:41:38.916 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_04
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2013-03-12 08:42:04.046
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-03-12 08:42:04.046
+!MESSAGE A conflict occurred for ALT+CTRL+U:
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(de.innot.avreclipse.commands.uploadproject,Upload Project,
+		Upload selected project to the target device,
+		Category(de.innot.avreclipse.commands,AVR,AVR Plugin commands,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.UpdateCommand,Update,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.team.svn.ui.action.local.UpdateAction,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui.workbench 4 0 2013-03-13 07:35:44.589
+!MESSAGE An unexpected exception was thrown.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.ui.internal.WorkbenchWindow.putToolbarLabel(WorkbenchWindow.java:1697)
+	at org.eclipse.ui.internal.menus.MenuAdditionCacheEntry.createToolBarAdditionContribution(MenuAdditionCacheEntry.java:208)
+	at org.eclipse.ui.internal.menus.MenuAdditionCacheEntry.createContributionItems(MenuAdditionCacheEntry.java:177)
+	at org.eclipse.ui.internal.menus.TrimContributionManager.update(TrimContributionManager.java:224)
+	at org.eclipse.ui.internal.WorkbenchWindow.updateLayoutDataForContents(WorkbenchWindow.java:3874)
+	at org.eclipse.ui.internal.WorkbenchWindow.setCoolBarVisible(WorkbenchWindow.java:3675)
+	at org.eclipse.ui.internal.ViewIntroAdapterPart.setBarVisibility(ViewIntroAdapterPart.java:203)
+	at org.eclipse.ui.internal.ViewIntroAdapterPart.dispose(ViewIntroAdapterPart.java:106)
+	at org.eclipse.ui.internal.WorkbenchPartReference.doDisposePart(WorkbenchPartReference.java:737)
+	at org.eclipse.ui.internal.ViewReference.doDisposePart(ViewReference.java:104)
+	at org.eclipse.ui.internal.WorkbenchPartReference.dispose(WorkbenchPartReference.java:684)
+	at org.eclipse.ui.internal.WorkbenchPage.disposePart(WorkbenchPage.java:1797)
+	at org.eclipse.ui.internal.WorkbenchPage.partRemoved(WorkbenchPage.java:1789)
+	at org.eclipse.ui.internal.ViewFactory.releaseView(ViewFactory.java:257)
+	at org.eclipse.ui.internal.Perspective.dispose(Perspective.java:292)
+	at org.eclipse.ui.internal.WorkbenchPage.dispose(WorkbenchPage.java:1868)
+	at org.eclipse.ui.internal.WorkbenchWindow.closeAllPages(WorkbenchWindow.java:894)
+	at org.eclipse.ui.internal.WorkbenchWindow.hardClose(WorkbenchWindow.java:1729)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:730)
+	at org.eclipse.ui.internal.WorkbenchWindow.access$0(WorkbenchWindow.java:715)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.run(WorkbenchWindow.java:867)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:865)
+	at org.eclipse.jface.window.WindowManager.close(WindowManager.java:109)
+	at org.eclipse.ui.internal.Workbench$18.run(Workbench.java:1114)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1111)
+	at org.eclipse.ui.internal.Workbench.access$15(Workbench.java:1040)
+	at org.eclipse.ui.internal.Workbench$25.run(Workbench.java:1284)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1282)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1254)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:727)
+	at org.eclipse.ui.internal.WorkbenchWindow.access$0(WorkbenchWindow.java:715)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.run(WorkbenchWindow.java:867)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:865)
+	at org.eclipse.jface.window.Window.handleShellCloseEvent(Window.java:741)
+	at org.eclipse.jface.window.Window$3.shellClosed(Window.java:687)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:98)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1062)
+	at org.eclipse.swt.widgets.Decorations.closeWidget(Decorations.java:308)
+	at org.eclipse.swt.widgets.Decorations.WM_CLOSE(Decorations.java:1677)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4530)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1610)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2061)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4972)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2526)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:498)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4623)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1610)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2061)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4972)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2526)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:498)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4623)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1610)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2061)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4972)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2531)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3752)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+!SESSION 2013-03-13 07:36:34.804 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_04
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2013-03-13 07:36:41.793
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-03-13 07:36:41.793
+!MESSAGE A conflict occurred for ALT+CTRL+U:
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(de.innot.avreclipse.commands.uploadproject,Upload Project,
+		Upload selected project to the target device,
+		Category(de.innot.avreclipse.commands,AVR,AVR Plugin commands,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.UpdateCommand,Update,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.team.svn.ui.action.local.UpdateAction,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)

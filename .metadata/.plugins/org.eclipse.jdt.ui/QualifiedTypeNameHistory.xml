@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="lejos.robotics.navigation.MoveController"/>
+<fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
+<fullyQualifiedTypeName name="LineNavigation.Graph"/>
+<fullyQualifiedTypeName name="LineNavigation.Navigator"/>
+<fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+<fullyQualifiedTypeName name="java.awt.Point"/>
+<fullyQualifiedTypeName name="lejos.nxt.Motor"/>
+<fullyQualifiedTypeName name="LineNavigation.Controller"/>
+<fullyQualifiedTypeName name="lejos.robotics.RegulatedMotor"/>
+<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+<fullyQualifiedTypeName name="lejos.nxt.LightSensor"/>
+<fullyQualifiedTypeName name="lejos.nxt.SensorPort"/>
+<fullyQualifiedTypeName name="LineNavigation.MovementfailedException"/>
+<fullyQualifiedTypeName name="LineNavigation.Edge"/>
+<fullyQualifiedTypeName name="LineNavigation.Node"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+</qualifiedTypeNameHistroy>
