@@ -197,7 +197,7 @@ public class Graph {
 		}
 	}
 
-	private ArrayList<Edge> deleteDoubleEdges(ArrayList<Edge> e) {
+	private ArrayList<Edge> deleteDoubleItems(ArrayList<Edge> e) {
 		ArrayList<Edge> al = new ArrayList<Edge>(e);
 
 		return al;

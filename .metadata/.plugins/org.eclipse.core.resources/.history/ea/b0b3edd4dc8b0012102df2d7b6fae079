@@ -107,16 +107,16 @@ public class Controller {
 
 	private void turnAngle(int angle, boolean immediateReturn) {
 		// TODO Odometrie ?
-		movementStart(immediateReturn);
+		// movementStart(immediateReturn);
 		int rotateSpeed = 10;
 		float leftTurnRatio = (float) (trackWidth / leftWheelDiameter);
 		float rightTurnRatio = (float) (trackWidth / rightWheelDiameter);
-		leftMotor.setSpeed(Math.round(rotateSpeed * leftTurnRatio));
-		rightMotor.setSpeed(Math.round(rotateSpeed * rightTurnRatio));
-		int rotateAngleLeft = (int) (angle * leftTurnRatio);
-		int rotateAngleRight = (int) (angle * rightTurnRatio);
-		leftMotor.rotate(-rotateAngleLeft, true);
-		rightMotor.rotate(rotateAngleRight, immediateReturn);
+		setSpeed(Math.round(rotateSpeed * leftTurnRatio),
+				Math.round(rotateSpeed * rightTurnRatio));
+		int rotateAngleLeft = _parity * (int) (angle * leftTurnRatio);
+		int rotateAngleRight = _parity * (int) (angle * rightTurnRatio);
+		_left.rotate(-rotateAngleLeft, true);
+		_right.rotate(rotateAngleRight, immediateReturn);
 
 		if (!immediateReturn)
 			while (isMoving())
@@ -124,10 +124,6 @@ public class Controller {
 		DifferentialPilot pilot = new DifferentialPilot(
 				MoveController.WHEEL_SIZE_NXT1, 2.25, leftMotor, rightMotor);
 		pilot.rotate(angle);
-	}
-
-	private boolean isMoving() {
-		return leftMotor.isMoving() || rightMotor.isMoving();
 	}
 
 	@SuppressWarnings("deprecation")

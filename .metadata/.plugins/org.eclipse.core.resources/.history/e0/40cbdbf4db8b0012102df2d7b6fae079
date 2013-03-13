@@ -6,12 +6,8 @@ import lejos.nxt.Button;
 import lejos.nxt.LCD;
 import lejos.nxt.LightSensor;
 import lejos.nxt.Motor;
-import lejos.nxt.NXT;
 import lejos.nxt.SensorPort;
 import lejos.robotics.RegulatedMotor;
-import lejos.robotics.navigation.DifferentialPilot;
-import lejos.robotics.navigation.Move;
-import lejos.robotics.navigation.MoveController;
 
 public class Controller {
 	private double travelSpeed;
@@ -105,29 +101,8 @@ public class Controller {
 		}
 	}
 
-	private void turnAngle(int angle, boolean immediateReturn) {
-		// TODO Odometrie ?
-		movementStart(immediateReturn);
-		int rotateSpeed = 10;
-		float leftTurnRatio = (float) (trackWidth / leftWheelDiameter);
-		float rightTurnRatio = (float) (trackWidth / rightWheelDiameter);
-		leftMotor.setSpeed(Math.round(rotateSpeed * leftTurnRatio));
-		rightMotor.setSpeed(Math.round(rotateSpeed * rightTurnRatio));
-		int rotateAngleLeft = (int) (angle * leftTurnRatio);
-		int rotateAngleRight = (int) (angle * rightTurnRatio);
-		leftMotor.rotate(-rotateAngleLeft, true);
-		rightMotor.rotate(rotateAngleRight, immediateReturn);
-
-		if (!immediateReturn)
-			while (isMoving())
-				Thread.yield();
-		DifferentialPilot pilot = new DifferentialPilot(
-				MoveController.WHEEL_SIZE_NXT1, 2.25, leftMotor, rightMotor);
-		pilot.rotate(angle);
-	}
-
-	private boolean isMoving() {
-		return leftMotor.isMoving() || rightMotor.isMoving();
+	private void turnAngle(int angle) {
+		// TODO Odometrie ? 
 	}
 
 	@SuppressWarnings("deprecation")

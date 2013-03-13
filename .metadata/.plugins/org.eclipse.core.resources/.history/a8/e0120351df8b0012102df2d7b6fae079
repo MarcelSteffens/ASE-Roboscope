@@ -126,10 +126,6 @@ public class Controller {
 		pilot.rotate(angle);
 	}
 
-	private boolean isMoving() {
-		return leftMotor.isMoving() || rightMotor.isMoving();
-	}
-
 	@SuppressWarnings("deprecation")
 	private void calibrateSensors() {
 		while (Button.ENTER.isPressed() != true) {

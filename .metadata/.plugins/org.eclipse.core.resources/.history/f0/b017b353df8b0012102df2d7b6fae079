@@ -125,9 +125,9 @@ public class Controller {
 				MoveController.WHEEL_SIZE_NXT1, 2.25, leftMotor, rightMotor);
 		pilot.rotate(angle);
 	}
-
-	private boolean isMoving() {
-		return leftMotor.isMoving() || rightMotor.isMoving();
+	
+	private boolean isMoving(){
+		return leftMotor.isMoving()||rightMotor.isMoving();
 	}
 
 	@SuppressWarnings("deprecation")
