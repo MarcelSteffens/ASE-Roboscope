@@ -12,4 +12,3 @@ INDEX VERSION 1.126+C:\Users\ms260811.azubi-3\Dropbox\ASE-Roboscope\.metadata\.p
 305854171.index
 4155206848.index
 1498219845.index
-3716777220.index

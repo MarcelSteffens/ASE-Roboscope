@@ -91,7 +91,7 @@ public class Controller {
 	public void findLine() {
 		double angle = 10;
 		while (true) {
-			turnAngle((int) angle);
+			turnAngle((int) angle, false);
 			if ((leftLightSensor.readValue() < blackLineColorValue + 5)
 					&& (leftLightSensor.readValue() > blackLineColorValue - 5))
 				return;
@@ -105,9 +105,13 @@ public class Controller {
 		}
 	}
 
+	private void turnAngle(int angle) {
+		turnAngle(angle, false);
+	}
+
 	private void turnAngle(int angle, boolean immediateReturn) {
 		// TODO Odometrie ?
-		movementStart(immediateReturn);
+		// movementStart(immediateReturn);
 		int rotateSpeed = 10;
 		float leftTurnRatio = (float) (trackWidth / leftWheelDiameter);
 		float rightTurnRatio = (float) (trackWidth / rightWheelDiameter);
@@ -121,9 +125,9 @@ public class Controller {
 		if (!immediateReturn)
 			while (isMoving())
 				Thread.yield();
-		DifferentialPilot pilot = new DifferentialPilot(
-				MoveController.WHEEL_SIZE_NXT1, 2.25, leftMotor, rightMotor);
-		pilot.rotate(angle);
+		// DifferentialPilot pilot = new DifferentialPilot(
+		// MoveController.WHEEL_SIZE_NXT1, 2.25, leftMotor, rightMotor);
+		// pilot.rotate(angle);
 	}
 
 	private boolean isMoving() {

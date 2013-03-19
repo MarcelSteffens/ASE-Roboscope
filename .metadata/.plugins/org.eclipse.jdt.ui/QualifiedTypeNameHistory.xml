@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="lejos.robotics.navigation.MoveController"/>
 <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
 <fullyQualifiedTypeName name="LineNavigation.Graph"/>
 <fullyQualifiedTypeName name="LineNavigation.Navigator"/>
@@ -16,4 +15,9 @@
 <fullyQualifiedTypeName name="LineNavigation.Edge"/>
 <fullyQualifiedTypeName name="LineNavigation.Node"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="lejos.robotics.navigation.DifferentialPilot"/>
+<fullyQualifiedTypeName name="lejos.nxt.NXT"/>
+<fullyQualifiedTypeName name="lejos.robotics.navigation.MoveController"/>
+<fullyQualifiedTypeName name="lejos.nxt.LCD"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
 </qualifiedTypeNameHistroy>
