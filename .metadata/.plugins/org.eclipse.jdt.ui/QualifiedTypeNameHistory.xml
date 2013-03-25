@@ -7,17 +7,17 @@
 <fullyQualifiedTypeName name="java.awt.Point"/>
 <fullyQualifiedTypeName name="lejos.nxt.Motor"/>
 <fullyQualifiedTypeName name="LineNavigation.Controller"/>
-<fullyQualifiedTypeName name="lejos.robotics.RegulatedMotor"/>
 <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
 <fullyQualifiedTypeName name="lejos.nxt.LightSensor"/>
 <fullyQualifiedTypeName name="lejos.nxt.SensorPort"/>
 <fullyQualifiedTypeName name="LineNavigation.MovementfailedException"/>
-<fullyQualifiedTypeName name="LineNavigation.Edge"/>
 <fullyQualifiedTypeName name="LineNavigation.Node"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="lejos.robotics.navigation.DifferentialPilot"/>
 <fullyQualifiedTypeName name="lejos.nxt.NXT"/>
 <fullyQualifiedTypeName name="lejos.robotics.navigation.MoveController"/>
 <fullyQualifiedTypeName name="lejos.nxt.LCD"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="LineNavigation.Edge"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="lejos.robotics.RegulatedMotor"/>
 </qualifiedTypeNameHistroy>

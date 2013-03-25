@@ -15,6 +15,12 @@ public class Graph {
 		this.startNode = StartNode;
 	}
 
+	/**
+	 * search method to find the node with the name
+	 * 
+	 * @param name
+	 * @return
+	 */
 	public Node searchNode(String name) {
 		if (name.equals(""))
 			return null;
@@ -22,6 +28,13 @@ public class Graph {
 			return searchNode(name, startNode);
 	}
 
+	/**
+	 * recursion help-method to find the node with the name
+	 * 
+	 * @param name
+	 * @param temp
+	 * @return
+	 */
 	private Node searchNode(String name, Node temp) {
 		if (temp.name.equals(name))
 			return temp;
@@ -39,6 +52,13 @@ public class Graph {
 		return null;
 	}
 
+	/**
+	 * search for a node with the point p
+	 * 
+	 * @param p
+	 *            the point where the node should be
+	 * @return Node
+	 */
 	public Node searchNode(Point p) {
 		if (p != null)
 			return searchNode(p, startNode);
@@ -46,6 +66,13 @@ public class Graph {
 			return null;
 	}
 
+	/**
+	 * recursion help method to find the node at the point
+	 * 
+	 * @param p
+	 * @param temp
+	 * @return
+	 */
 	private Node searchNode(Point p, Node temp) {
 		if (temp.position.x == p.x && temp.position.y == p.y)
 			return temp;
@@ -77,6 +104,9 @@ public class Graph {
 			this.destinationNode = destiantion;
 	}
 
+	/**
+	 * create the scenario
+	 */
 	public void createScenario() {
 		Node A = new Node("A", new Point(10, 142));
 		Node B = new Node("B", new Point(10, 121));
@@ -115,7 +145,7 @@ public class Graph {
 		E.addEdge(new Edge(F, 41));
 		E.addEdge(new Edge(K, 41));
 		F.addEdge(new Edge(E, 41));
-		F.addEdge(new Edge(K, 46));
+		F.addEdge(new Edge(G, 46));
 		F.addEdge(new Edge(L, 41));
 		G.addEdge(new Edge(F, 46));
 		G.addEdge(new Edge(H, 28));
@@ -153,49 +183,53 @@ public class Graph {
 		T.addEdge(new Edge(N, 25));
 		U.addEdge(new Edge(Q, 25));
 		V.addEdge(new Edge(M, 70));
-		setStartNode(A);
-		setDestinationNode(E);
+		setStartNode(K);
+		setDestinationNode(I);
 	}
 
 	public ArrayList<Edge> getShortestpath(Node start, Node destination) {
 		setStartNode(start);
 		setDestinationNode(destination);
+
 		Node temp = start;
 		start.visited = true;
+		// initialize the help lists
 		ArrayList<Edge> al = new ArrayList<Edge>();
 		ArrayList<Edge> possiblePaths = new ArrayList<Edge>();
+		// starting edge
 		Edge shortest = new Edge(null, 0);
+
+		// Dijkstra to find the destination node and save in every node the edge
+		// from which node i came from
 		while (temp.name != destination.name) {
-			possiblePaths = addPaths(temp, shortest, possiblePaths);
+			possiblePaths = addPaths(temp, shortest, possiblePaths);// add all
+																	// paths
+																	// from this
+																	// node to
+																	// the
+																	// arrayList
 			shortest = getShortestEdge(possiblePaths);
 			shortest.destination.visited = true;
+
 			possiblePaths.remove(shortest);
 			temp = shortest.destination;
-			System.out.println(possiblePaths);
 		}
 
+		// turn around all previous edges and go to start while saving the way
+		// in al
 		while (temp.name != start.name) {
 			Node temp2 = temp;
 			temp = temp.previous.destination;
-			temp2.previous = turnEdge(temp, temp2);
+			temp2.previous = searchEdgeToNode(temp, temp2);
 			al.add(temp2.previous);
-			System.out.println(al);
 		}
+
 		ArrayList<Edge> way = new ArrayList<Edge>();
+		// bring the way in the right order and return the finished way
 		for (int i = al.size() - 1; i >= 0; i--) {
 			way.add(al.get(i));
 		}
 		return way;
-
-		// if (start == destination)
-		// return new ArrayList<Edge>();
-		// else {
-		// ArrayList<Edge> al = new ArrayList<Edge>();
-		// start.visited = true;
-		// al.addAll(getShortestPath(start, destination,
-		// new ArrayList<Edge>(), new Edge(new Node(), 0)));
-		// return al;
-		// }
 	}
 
 	/**
@@ -206,16 +240,28 @@ public class Graph {
 	 * @return
 	 */
 	private ArrayList<Edge> addPaths(Node temp, Edge e, ArrayList<Edge> edges) {
+		// addes all edges that were not visited to the ArrayList edges and
+		// returns it
 		for (int i = 0; i < temp.edges.size(); i++) {
 			if (temp.edges.get(i).destination.visited != true) {
-				temp.edges.get(i).weight += e.weight;
+				temp.edges.get(i).weight += e.weight;// add the weight of the
+														// way you came from
 				edges = addEdge(temp, temp.edges.get(i), edges);
 			}
 		}
 		return edges;
 	}
 
-	private Edge turnEdge(Node temp, Node previous) {
+	/**
+	 * searchs the Edge in temp that goes to previous
+	 * 
+	 * @param temp
+	 *            Node the Edge is searched in
+	 * @param previous
+	 *            Edge's target
+	 * @return
+	 */
+	private Edge searchEdgeToNode(Node temp, Node previous) {
 		for (int i = 0; i < temp.edges.size(); i++) {
 			if (temp.edges.get(i).destination.name == previous.name)
 				return temp.edges.get(i);
@@ -223,25 +269,36 @@ public class Graph {
 		return null;
 	}
 
+	/**
+	 * adds an Edge to the ArrayList<Edge>
+	 * 
+	 * @param temp
+	 * @param e
+	 * @param al
+	 * @return
+	 */
 	private ArrayList<Edge> addEdge(Node temp, Edge e, ArrayList<Edge> al) {
+		// checks if there is already an edge with the destination and if the
+		// new one is shorter remove the old and add the new one
 		for (int i = 0; i < al.size(); i++) {
 			if (al.get(i).destination.name.equals(e.destination.name)) {
 				if (al.get(i).weight > e.weight) {
 					al.add(e);
-					e.destination.previous = turnEdge(e.destination, temp);
+					e.destination.previous = searchEdgeToNode(e.destination,
+							temp);
 					al.remove(i);
 					return al;
 				}
 				return al;
 			}
 		}
-		e.destination.previous = turnEdge(e.destination, temp);
+		e.destination.previous = searchEdgeToNode(e.destination, temp);
 		al.add(e);
 		return al;
 	}
 
 	/**
-	 * calculate the shortest path
+	 * calculate the shortest Edge in the arrayList
 	 * 
 	 * @param edges
 	 * @return the shortest edge in the arrayList
@@ -260,7 +317,7 @@ public class Graph {
 		return null;
 	}
 
-	private void setAllNodesto(boolean b) {
+	private void resetGraph() {
 		// TODO alle nachfolge prüfen ob sie besucht wurdenn falls ja
 		// hinzufuegen und aktuellen auf false setzen bis liste leer
 	}

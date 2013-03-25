@@ -37,6 +37,10 @@ public class Controller {
 	// calibrated value of the white space
 	private static int whiteColorValue;
 
+	/**
+	 * constructor to default values and starts the calibration
+	 * 
+	 */
 	public Controller() {
 		maxTravelSpeed = 900;
 		travelSpeed = 450;
@@ -117,7 +121,7 @@ public class Controller {
 		float rightTurnRatio = (float) (trackWidth / rightWheelDiameter);
 		leftMotor.setSpeed(Math.round(rotateSpeed * leftTurnRatio));
 		rightMotor.setSpeed(Math.round(rotateSpeed * rightTurnRatio));
-		int rotateAngleLeft = (int) (angle * leftTurnRatio);
+		int rotateAngleLeft = (int) (angle * leftTurnRatio);	
 		int rotateAngleRight = (int) (angle * rightTurnRatio);
 		leftMotor.rotate(-rotateAngleLeft, true);
 		rightMotor.rotate(rotateAngleRight, immediateReturn);
@@ -127,7 +131,7 @@ public class Controller {
 				Thread.yield();
 		// DifferentialPilot pilot = new DifferentialPilot(
 		// MoveController.WHEEL_SIZE_NXT1, 2.25, leftMotor, rightMotor);
-		// pilot.rotate(angle);
+		// pilot.rotate(angle);	
 	}
 
 	private boolean isMoving() {
