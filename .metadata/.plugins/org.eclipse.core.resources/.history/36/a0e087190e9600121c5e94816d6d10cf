@@ -1,0 +1,38 @@
+package LineNavigation;
+
+import lejos.nxt.Button;
+import lejos.nxt.LCD;
+
+public class TestMain {
+	public static void main(String[] args) {
+		// Navigator n = new Navigator();
+
+		// ---------- controller test----------\\
+		Controller c = new Controller();
+		while (!Button.ESCAPE.isPressed()) {
+			LCD.clear();
+			if (Button.LEFT.isPressed()) {
+				LCD.clear();
+				LCD.drawString("clockwise", 1, 1);
+				c.turnAngle(270);
+			}
+			if (Button.RIGHT.isPressed()) {
+				LCD.clear();
+				LCD.drawString("anti-clockwise", 1, 1);
+				c.turnAngle(270);
+			}
+		}
+
+		// ------------- graph test------------\\
+//		 Graph g = new Graph();
+//		 g.createScenario();
+//		 ArrayList<Edge> al = g.getShortestpath(g.startNode,
+//		 g.destinationNode);
+//		 System.out.println(al);
+		// try {
+		// Thread.sleep(3000);
+		// } catch (InterruptedException e) {
+		// e.printStackTrace();
+		// }
+	}
+}

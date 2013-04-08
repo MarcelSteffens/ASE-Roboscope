@@ -21,6 +21,7 @@ public class Edge {
 		this.weight = 0;
 	}
 
+	@Override
 	public String toString() {
 		return "(" + destination.name + "|" + weight + ")";
 	}

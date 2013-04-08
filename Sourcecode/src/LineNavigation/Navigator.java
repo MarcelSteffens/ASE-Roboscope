@@ -31,7 +31,7 @@ public class Navigator {
 			try {
 				Mover.turnToPoint(e.get(i).destination);
 				Mover.findLine();
-				Mover.travelEdge(e.get(i));
+//				Mover.travelEdge(e.get(i));
 			} catch (MovementfailedException e1) {
 				return false;
 			}

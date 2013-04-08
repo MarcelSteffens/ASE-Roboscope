@@ -6,16 +6,12 @@ import lejos.nxt.Button;
 import lejos.nxt.LCD;
 import lejos.nxt.LightSensor;
 import lejos.nxt.Motor;
-import lejos.nxt.NXT;
 import lejos.nxt.SensorPort;
 import lejos.robotics.RegulatedMotor;
-import lejos.robotics.navigation.DifferentialPilot;
-import lejos.robotics.navigation.Move;
-import lejos.robotics.navigation.MoveController;
 
 public class Controller {
-	private double travelSpeed;
-	private double maxTravelSpeed;
+	private int travelSpeed;
+	private int maxTravelSpeed;
 
 	private Point actPosition;
 	private int actHeading;
@@ -25,17 +21,19 @@ public class Controller {
 	private static final int HEADING_WEST = 4;
 
 	// initialize the motor
-	private RegulatedMotor leftMotor = Motor.A;
-	private RegulatedMotor rightMotor = Motor.B;
+	private RegulatedMotor leftMotor = Motor.B;
+	private RegulatedMotor rightMotor = Motor.A;
 
 	// initialize the lightSensors
-	private LightSensor leftLightSensor = new LightSensor(SensorPort.S1);
-	private LightSensor rightLightSensor = new LightSensor(SensorPort.S2);
+	private LightSensor rightLightSensor = new LightSensor(SensorPort.S1);
+	private LightSensor leftLightSensor = new LightSensor(SensorPort.S2);
 
 	// calibrated value of the black line
 	private static int blackLineColorValue;
 	// calibrated value of the white space
 	private static int whiteColorValue;
+
+	private static final int variance = 8;
 
 	/**
 	 * constructor to default values and starts the calibration
@@ -43,42 +41,50 @@ public class Controller {
 	 */
 	public Controller() {
 		maxTravelSpeed = 900;
-		travelSpeed = 450;
+		travelSpeed = 300;
+		leftMotor.setSpeed(travelSpeed);
+		rightMotor.setSpeed(travelSpeed);
 
-		calibrateSensors();
+		// calibrateSensors();
 	}
 
 	@SuppressWarnings("deprecation")
-	public boolean travelEdge(Edge e) {
+	public boolean travelEdge() {
 		while ((Button.ESCAPE.isPressed() != true)
-				&& !(((rightLightSensor.readValue() > blackLineColorValue - 5 && rightLightSensor
-						.readValue() < blackLineColorValue + 5) && (leftLightSensor
-						.readValue() > blackLineColorValue - 5 && leftLightSensor
-						.readValue() < blackLineColorValue + 5)))) {
+				&& !(((rightLightSensor.readValue() > blackLineColorValue
+						- variance && rightLightSensor.readValue() < blackLineColorValue
+						+ variance) && (leftLightSensor.readValue() > blackLineColorValue
+						- variance && leftLightSensor.readValue() < blackLineColorValue
+						+ variance)))) {
 
 			LCD.drawInt(blackLineColorValue, 14, 1);
 			LCD.drawInt(whiteColorValue, 0, 1);
 			LCD.drawInt(rightLightSensor.readValue(), 0, 0);
 			LCD.drawInt(leftLightSensor.readValue(), 14, 0);
 
-			if (rightLightSensor.readValue() > blackLineColorValue - 5
-					&& rightLightSensor.readValue() < blackLineColorValue + 5) {
-				leftMotor.forward();
+			if (rightLightSensor.readValue() > blackLineColorValue - variance
+					&& rightLightSensor.readValue() < blackLineColorValue
+							+ variance) {
+				leftMotor.backward();
 				rightMotor.stop();
-			} else if (leftLightSensor.readValue() > blackLineColorValue - 5
-					&& leftLightSensor.readValue() < blackLineColorValue + 5) {
+			} else if (leftLightSensor.readValue() > blackLineColorValue
+					- variance
+					&& leftLightSensor.readValue() < blackLineColorValue
+							+ variance) {
 				leftMotor.stop();
 				rightMotor.forward();
-			} else {
-				leftMotor.forward();
-				rightMotor.forward();
-			}
+			} 
+			// else {
+			// leftMotor.backward();
+			// rightMotor.forward();
+			// }
 		}
-		actPosition = e.destination.position;
+
+		// actPosition = e.destination.position;
 		return true;
 	}
 
-	public void setTravelSpeed(double speed) {
+	public void setTravelSpeed(int speed) {
 		if (speed > maxTravelSpeed)
 			speed = 900;
 		this.travelSpeed = speed;
@@ -92,15 +98,23 @@ public class Controller {
 		return maxTravelSpeed;
 	}
 
+	public void stop() {
+		leftMotor.stop();
+		rightMotor.stop();
+	}
+
 	public void findLine() {
 		double angle = 10;
 		while (true) {
 			turnAngle((int) angle, false);
-			if ((leftLightSensor.readValue() < blackLineColorValue + 5)
-					&& (leftLightSensor.readValue() > blackLineColorValue - 5))
+			if ((leftLightSensor.readValue() < blackLineColorValue + variance)
+					&& (leftLightSensor.readValue() > blackLineColorValue
+							- variance))
 				return;
-			else if ((rightLightSensor.readValue() < blackLineColorValue + 5)
-					&& (rightLightSensor.readValue() > blackLineColorValue - 5))
+			else if ((rightLightSensor.readValue() < blackLineColorValue
+					+ variance)
+					&& (rightLightSensor.readValue() > blackLineColorValue
+							- variance))
 				return;
 			angle += 15;
 			angle *= -1;
@@ -109,29 +123,33 @@ public class Controller {
 		}
 	}
 
-	private void turnAngle(int angle) {
+	/**
+	 * rotates a specific angle
+	 * 
+	 * @param angle
+	 *            angle > 0 -> clockwise | angle < 0 -> anti-clockwise
+	 */
+	public void turnAngle(int angle) {
 		turnAngle(angle, false);
 	}
 
 	private void turnAngle(int angle, boolean immediateReturn) {
-		// TODO Odometrie ?
-		// movementStart(immediateReturn);
-		int rotateSpeed = 10;
-		float leftTurnRatio = (float) (trackWidth / leftWheelDiameter);
-		float rightTurnRatio = (float) (trackWidth / rightWheelDiameter);
-		leftMotor.setSpeed(Math.round(rotateSpeed * leftTurnRatio));
-		rightMotor.setSpeed(Math.round(rotateSpeed * rightTurnRatio));
-		int rotateAngleLeft = (int) (angle * leftTurnRatio);	
-		int rotateAngleRight = (int) (angle * rightTurnRatio);
+		int rotateSpeed = 50;
+		final float wheelSizeDiameter = 2.4f;
+		float turnRatio = (11.0f / wheelSizeDiameter);
+
+		leftMotor.setSpeed(Math.round(rotateSpeed * turnRatio));
+		rightMotor.setSpeed(Math.round(rotateSpeed * turnRatio));
+
+		int rotateAngleLeft = (int) (angle * turnRatio);
+		int rotateAngleRight = (int) (angle * turnRatio);
+
 		leftMotor.rotate(-rotateAngleLeft, true);
-		rightMotor.rotate(rotateAngleRight, immediateReturn);
+		rightMotor.rotate(-rotateAngleRight, immediateReturn);
 
 		if (!immediateReturn)
 			while (isMoving())
 				Thread.yield();
-		// DifferentialPilot pilot = new DifferentialPilot(
-		// MoveController.WHEEL_SIZE_NXT1, 2.25, leftMotor, rightMotor);
-		// pilot.rotate(angle);	
 	}
 
 	private boolean isMoving() {
@@ -139,15 +157,24 @@ public class Controller {
 	}
 
 	@SuppressWarnings("deprecation")
-	private void calibrateSensors() {
+	public void calibrateSensors() {
+		LCD.clear();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e1) {
+			e1.printStackTrace();
+		}
 		while (Button.ENTER.isPressed() != true) {
 			LCD.drawString("place the left ", 0, 0);
 			LCD.drawString("sensor on the", 0, 1);
-			LCD.drawString("and the right", 0, 2);
-			LCD.drawString("on the white", 0, 3);
+			LCD.drawString("line and", 0, 2);
+			LCD.drawString("the right on", 0, 3);
+			LCD.drawString("the white", 0, 4);
 			LCD.drawString("Press enter button", 0, 6);
 			LCD.drawInt(leftLightSensor.readValue(), 0, 7);
 			LCD.drawInt(rightLightSensor.readValue(), 14, 7);
+			if (Button.ESCAPE.isPressed())
+				System.exit(1);
 		}
 		LCD.clear();
 		try {

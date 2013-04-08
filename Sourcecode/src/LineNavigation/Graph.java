@@ -187,15 +187,21 @@ public class Graph {
 		setDestinationNode(I);
 	}
 
+	/**
+	 * 
+	 * @param start
+	 * @param destination
+	 * @return
+	 */
 	public ArrayList<Edge> getShortestpath(Node start, Node destination) {
-		setStartNode(start);
-		setDestinationNode(destination);
 
 		Node temp = start;
 		start.visited = true;
+
 		// initialize the help lists
 		ArrayList<Edge> al = new ArrayList<Edge>();
 		ArrayList<Edge> possiblePaths = new ArrayList<Edge>();
+
 		// starting edge
 		Edge shortest = new Edge(null, 0);
 
@@ -208,10 +214,14 @@ public class Graph {
 																	// node to
 																	// the
 																	// arrayList
-			shortest = getShortestEdge(possiblePaths);
+
+			shortest = getShortestEdge(possiblePaths); // save the actual
+														// shortest edge in the
+														// possibleEdges
+
 			shortest.destination.visited = true;
 
-			possiblePaths.remove(shortest);
+			possiblePaths.remove(shortest); // remove visited edge
 			temp = shortest.destination;
 		}
 
@@ -220,7 +230,9 @@ public class Graph {
 		while (temp.name != start.name) {
 			Node temp2 = temp;
 			temp = temp.previous.destination;
-			temp2.previous = searchEdgeToNode(temp, temp2);
+			temp2.previous = searchEdge(temp, temp2);
+			// saved the way to start but i want the way to destination, so turn
+			// all edges again
 			al.add(temp2.previous);
 		}
 
@@ -239,17 +251,46 @@ public class Graph {
 	 * @param edges
 	 * @return
 	 */
-	private ArrayList<Edge> addPaths(Node temp, Edge e, ArrayList<Edge> edges) {
+	private ArrayList<Edge> addPaths(Node actNode, Edge e, ArrayList<Edge> edges) {
 		// addes all edges that were not visited to the ArrayList edges and
 		// returns it
-		for (int i = 0; i < temp.edges.size(); i++) {
-			if (temp.edges.get(i).destination.visited != true) {
-				temp.edges.get(i).weight += e.weight;// add the weight of the
+		for (int i = 0; i < actNode.edges.size(); i++) {
+			if (actNode.edges.get(i).destination.visited != true) {
+				actNode.edges.get(i).weight += e.weight;// add the weight of the
 														// way you came from
-				edges = addEdge(temp, temp.edges.get(i), edges);
+				edges = addEdge(actNode, actNode.edges.get(i), edges);
 			}
 		}
 		return edges;
+	}
+
+	/**
+	 * adds an Edge to the ArrayList<Edge> <br>
+	 * searchs if the Node is already in the arraylist and if there is one check
+	 * if it's longer than the new one and override it
+	 * 
+	 * @param temp
+	 * @param e
+	 * @param al
+	 * @return
+	 */
+	private ArrayList<Edge> addEdge(Node actNode, Edge e, ArrayList<Edge> al) {
+		// checks if there is already an edge with the destination and if the
+		// new one is shorter remove the old and add the new one
+		for (int i = 0; i < al.size(); i++) {
+			if (al.get(i).destination.name.equals(e.destination.name)) {
+				if (al.get(i).weight > e.weight) {
+					al.add(e);
+					e.destination.previous = searchEdge(e.destination, actNode);
+					al.remove(i);
+					return al;
+				} else
+					return al;
+			}
+		}
+		e.destination.previous = searchEdge(e.destination, actNode);
+		al.add(e);
+		return al;
 	}
 
 	/**
@@ -261,40 +302,12 @@ public class Graph {
 	 *            Edge's target
 	 * @return
 	 */
-	private Edge searchEdgeToNode(Node temp, Node previous) {
+	private Edge searchEdge(Node temp, Node previous) {
 		for (int i = 0; i < temp.edges.size(); i++) {
 			if (temp.edges.get(i).destination.name == previous.name)
 				return temp.edges.get(i);
 		}
 		return null;
-	}
-
-	/**
-	 * adds an Edge to the ArrayList<Edge>
-	 * 
-	 * @param temp
-	 * @param e
-	 * @param al
-	 * @return
-	 */
-	private ArrayList<Edge> addEdge(Node temp, Edge e, ArrayList<Edge> al) {
-		// checks if there is already an edge with the destination and if the
-		// new one is shorter remove the old and add the new one
-		for (int i = 0; i < al.size(); i++) {
-			if (al.get(i).destination.name.equals(e.destination.name)) {
-				if (al.get(i).weight > e.weight) {
-					al.add(e);
-					e.destination.previous = searchEdgeToNode(e.destination,
-							temp);
-					al.remove(i);
-					return al;
-				}
-				return al;
-			}
-		}
-		e.destination.previous = searchEdgeToNode(e.destination, temp);
-		al.add(e);
-		return al;
 	}
 
 	/**

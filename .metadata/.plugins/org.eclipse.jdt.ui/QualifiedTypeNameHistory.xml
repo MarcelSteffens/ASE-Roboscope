@@ -6,7 +6,6 @@
 <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
 <fullyQualifiedTypeName name="java.awt.Point"/>
 <fullyQualifiedTypeName name="lejos.nxt.Motor"/>
-<fullyQualifiedTypeName name="LineNavigation.Controller"/>
 <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
 <fullyQualifiedTypeName name="lejos.nxt.LightSensor"/>
 <fullyQualifiedTypeName name="lejos.nxt.SensorPort"/>
@@ -16,8 +15,11 @@
 <fullyQualifiedTypeName name="lejos.nxt.NXT"/>
 <fullyQualifiedTypeName name="lejos.robotics.navigation.MoveController"/>
 <fullyQualifiedTypeName name="lejos.nxt.LCD"/>
-<fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="LineNavigation.Edge"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="lejos.robotics.RegulatedMotor"/>
+<fullyQualifiedTypeName name="LineNavigation.Controller"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="lejos.nxt.Button"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

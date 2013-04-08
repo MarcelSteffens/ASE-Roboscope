@@ -38,6 +38,7 @@ public class Node {
 				edges.add(edge);
 	}
 
+	@Override
 	public String toString() {
 		String s = "";
 		s += name + "(" + position.x + "|" + position.y + ") ->";
